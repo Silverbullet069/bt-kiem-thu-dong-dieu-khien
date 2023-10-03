@@ -60,10 +60,15 @@ python3 -m unittest test.py
 coverage run -m --branch --context=notatriangle --data-file=test1.coverage unittest test.TestControlFlow.test_1
 ```
 ```coverage run```: generate a coverage file that measure code execution
+
 ```--branch```: include branch coverage
+
 ```--context```: add context label to record for this coverage run
+
 ```--data-file```: write coverage report to the specified file, *.coverage* is the default
+
 ```test.TestControlFlow.test_1```: only run 1 out of 4 tests
+
 This only ran test case 1, to check whether the input give a triangle or not and produce ```test1.coverage```
 
 ### Combine results of multiple test results
@@ -71,8 +76,11 @@ This only ran test case 1, to check whether the input give a triangle or not and
 coverage combine --keep --data-file=test-combine.coverage *.coverage
 ```
 ```coverage combine```: combine data from multiple coverage files into a single file representing the union of the data.
+
 ```--keep```: DO NOT delete the individual coverage file after combined
+
 ```--data-file```: mentioned above
+
 ```*.coverage```: substitude for all coverage file in the current directory.
 
 ## Create reports
@@ -87,8 +95,11 @@ coverage report -m --date-file=test1.coverage
 coverage html -d htmlcov-test1 --data-file test1.coverage --title=test1
 ```
 ```coverage html```: generated HTML report
+
 ```-d```: write HTML report into the specified folder
+
 ```--data-file```: mentioned above
+
 ```--title=test1```: specify the title to write into HTML file
 
 ### JSON view
@@ -96,9 +107,10 @@ coverage html -d htmlcov-test1 --data-file test1.coverage --title=test1
 coverage json --data-file=test1.coverage -o test1.json --pretty-print
 ```
 ```coverage json```: generated JSON report
-```--data-file```: mentioned above
-```-o```: write the JSON report to this file
 
+```--data-file```: mentioned above
+
+```-o```: write the JSON report to this file
 
 
 
