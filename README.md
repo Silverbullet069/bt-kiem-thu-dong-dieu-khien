@@ -79,7 +79,7 @@ coverage combine --keep --data-file=test-combine.coverage *.coverage
 
 ```--keep```: DO NOT delete the individual coverage file after combined
 
-```--data-file```: mentioned above
+```--data-file```: write coverage report to the specified file, .coverage is the default
 
 ```*.coverage```: substitude for all coverage file in the current directory.
 
@@ -89,6 +89,7 @@ coverage combine --keep --data-file=test-combine.coverage *.coverage
 coverage report -m --date-file=test1.coverage
 ```
 ```-m```: show the missing lines that aren't being covered.
+```--data-file```: write coverage report to the specified file, .coverage is the default
 
 ### Web view
 ```sh
@@ -98,7 +99,7 @@ coverage html -d htmlcov-test1 --data-file test1.coverage --title=test1
 
 ```-d```: write HTML report into the specified folder
 
-```--data-file```: mentioned above
+```--data-file```: write coverage report to the specified file, .coverage is the default
 
 ```--title=test1```: specify the title to write into HTML file
 
@@ -108,7 +109,7 @@ coverage json --data-file=test1.coverage -o test1.json --pretty-print
 ```
 ```coverage json```: generated JSON report
 
-```--data-file```: mentioned above
+```--data-file```: write coverage report to the specified file, .coverage is the default
 
 ```-o```: write the JSON report to this file
 
