@@ -88,7 +88,10 @@ coverage combine --keep --data-file=test-combine.coverage *.coverage
 ```sh
 coverage report -m --date-file=test1.coverage
 ```
+```coverage report```: report coverage statistics on modules.
+
 ```-m```: show the missing lines that aren't being covered.
+
 ```--data-file```: write coverage report to the specified file, .coverage is the default
 
 ### Web view
