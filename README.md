@@ -1,25 +1,32 @@
 # bt-kiem-thu-dong-dieu-khien
-Source code for Control Flow Testing assignments
 
-## Technologies used
-Python v3.10.12
+> Source code for Control Flow Testing assignments
 
-Unittest module
+## Table of contents:
+1.  [How to use](#how-to-use)
+2.  [Requirements](#requirements)
+3.  [Installation](#installation)
+4.  [Running Tests](#running-tests)
+5.  [Generate Reports](#generate-reports)
 
-Official documentation: https://docs.python.org/3/library/unittest.html
+## How to use
+### Using pre-generated test results
+You will use existed test results that I have pre-generated for you. You only need to
+1. Open HTML reports in ```html-report``` folder using Live Server or something else.
+2. Open JSON reports in ```json-report``` folder using any text editors. 
+If that's the case for you, you can stop reading from here, skip to how to [clone this repository](#clone-this-repository).
 
-Coverage.py module, v7.3.2
+### Generated your own test results
+You will generate your own test results, which required you to continue reading.
 
-Official documentation: https://coverage.readthedocs.io/en/7.3.2/
+## Requirements
+[**Python**](https://docs.python.org/3.10/) (==v3.10.12)
 
-## There are 2 ways to use this repository
-### One. Using pre-generated test results
-You use existing test results that I have pre-generated for you. You only need to use Live Server or something else to open HTML reports in ```html-report``` folder, use any text editor to view JSON reports in ```json-report``` folder. If that's the case for you, you can stop reading from here, read how to clone this repository, clone it and use it.
+[**unittest**](https://docs.python.org/3/library/unittest.html)
 
-### Two. Generated your own test results
-You generated your own test results, which required you to continue reading.
+[**Coverage.py**](https://coverage.readthedocs.io/en/7.3.2/) (==v7.3.2)
 
-## Setup environment
+## Installation
 
 ### Clone this repository
 ```sh
@@ -27,14 +34,15 @@ git clone --depth 1 https://github.com/Silverbullet069/bt-kiem-thu-dong-dieu-khi
 cd bt-kiem-thu-dong-dieu-khien
 ```
 
-### Create a virtual environment (this is Optional)
+### Create a virtual environment 
+> Note: this is optional, you could install directly into your global environment but that's not recommended.
 ```sh
 pip install virtualenv venv
 pip list
 python3 -m venv testing-cfg
 source testing-cfg/bin/activate
 ```
-Make sure **(testing-cfg)** appear in your command prompt.
+If you ran the code successfully, **(testing-cfg)** will appear in your command prompt.
 
 ### Install Coverage.py
 ```sh
@@ -48,14 +56,24 @@ coverage --version
 sudo apt install python3-dev gcc
 ```
 
-## Testing workflow
+## Running Tests
 
-### Recall from last assignment: Run unittest module, without Coverage.py
+### Run unittest module, without using Coverage.py
+1. Run all tests at once
 ```sh
-python3 -m unittest test.py
+python3 -m unittest -v test.py
 ```
 
+2. Run individual test, one-by-one
+```sh
+python3 -m unittest -v test.TestControlFlow.test_1
+```
+```test```: our custom module name
+```TestControlFlow```: the class that inherits ```unittest.TestCase``` class
+```test_1```: the method that corresponds to a unit test.
+
 ### Using Coverage.py to run individual test
+
 ```sh
 coverage run -m --branch --context=notatriangle --data-file=test1.coverage unittest test.TestControlFlow.test_1
 ```
@@ -65,13 +83,17 @@ coverage run -m --branch --context=notatriangle --data-file=test1.coverage unitt
 
 ```--context```: add context label to record for this coverage run
 
-```--data-file```: write coverage report to the specified file, *.coverage* is the default
+```--data-file```: write coverage report to the specified file. Without specifed, *.coverage* is the default
 
-```test.TestControlFlow.test_1```: only run 1 out of 4 tests
+```test.TestControlFlow.test_1```: only run test_1 method, defined in TestControlFlow class
 
-This only ran test case 1, to check whether the input give a triangle or not and produce ```test1.coverage```
+This only ran test case 1, to check whether the input give a triangle or not.
+
+This outputs a file called ```test1.coverage```
 
 ### Combine results of multiple test results
+After running the remaining 3 unit tests, now we have ```test1.coverage```, ```test2.coverage```, ```test3.coverage```, ```test4.coverage``` in our possessions
+
 ```sh
 coverage combine --keep --data-file=test-combine.coverage *.coverage
 ```
@@ -83,7 +105,10 @@ coverage combine --keep --data-file=test-combine.coverage *.coverage
 
 ```*.coverage```: substitude for all coverage file in the current directory.
 
-## Create reports
+This outputs a file called ```test-combine.coverage```
+
+## Generate reports
+
 ### Text-based, command-line
 ```sh
 coverage report -m --date-file=test1.coverage
@@ -115,7 +140,3 @@ coverage json --data-file=test1.coverage -o test1.json --pretty-print
 ```--data-file```: write coverage report to the specified file, .coverage is the default
 
 ```-o```: write the JSON report to this file
-
-
-
-
