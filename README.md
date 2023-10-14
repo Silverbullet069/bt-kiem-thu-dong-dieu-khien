@@ -16,7 +16,7 @@ You will use existed test results that I have pre-generated for you. You only ne
 2. Open JSON reports in ```json-report``` folder using any text editors. 
 If that's the case for you, you can stop reading from here, skip to how to [clone this repository](#clone-this-repository).
 
-### Generated your own test results
+### Or, generated your own test results
 You will generate your own test results, which required you to continue reading.
 
 ## Requirements
