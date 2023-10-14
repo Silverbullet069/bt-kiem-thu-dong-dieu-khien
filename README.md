@@ -11,12 +11,14 @@
 
 ## How to use
 ### Using pre-generated test results
-You will use existed test results that I have pre-generated for you. You only need to
+You will use existed test results that I have pre-generated for you. You only need to:
+
 1. Open HTML reports in ```html-report``` folder using Live Server or something else.
-2. Open JSON reports in ```json-report``` folder using any text editors. 
+2. Open JSON reports in ```json-report``` folder using any text editors.
+
 If that's the case for you, you can stop reading from here, skip to how to [clone this repository](#clone-this-repository).
 
-### Or, generated your own test results
+### Or, generate your own test results
 You will generate your own test results, which required you to continue reading.
 
 ## Requirements
